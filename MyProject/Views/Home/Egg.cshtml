@@ -1,0 +1,180 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Egg</title>
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+
+       
+        .egg-content {
+            position: relative;
+            border:1px solid #ff0000;
+        }
+
+            .egg-content .egg {
+                position: relative;
+                height: 300px;
+                background: url(/assets/images/egg.jpg) no-repeat center;
+                z-index:9
+            }
+
+        #hammer {
+            position: absolute;
+            display:none;
+            top: 0;
+            left :0;
+            width: 231px;
+            height: 143px;
+            background: url(/assets/images/hammer.png) no-repeat center;
+            /*cursor:none;*/
+            border:1px solid #ff6a00;
+            z-index:11;
+        }
+    </style>
+</head>
+<body>
+    <div class="">
+        <button class="btn btn-primary" id="btnSmashEgg">砸蛋</button>
+    </div>
+    <div class="alert alert-danger"></div>
+
+    <div class="container egg-content">
+        <div class="row">
+            <div id="egg1" class="col-sm-4 egg">1</div>
+            <div id="egg2" class="col-sm-4 egg">2</div>
+            <div id="egg3" class="col-sm-4 egg">3</div>
+        </div>
+        <div id="hammer"></div>
+    </div>
+    <div id="coordinate"></div>
+</body>
+</html>
+<script src="~/assets/js/jquery-1.10.2.min.js"></script>
+<script>
+    ~(function ($) {
+
+        var win = $(window),
+            doc = $(document);
+
+        var egg = function () {
+            return new egg.fn.init();
+        }
+
+        egg.fn = egg.prototype = {
+
+            init: function () {
+                var that = this;
+
+                this.$eggBox = $(".egg-content");
+                this.$hammer = $("#hammer");
+                this.root = this.$hammer;
+                this.min = { x: 0, y: 0 };
+                this.max = { x: 935, y: 155 };
+                this.movePosition = {};
+                this.startPosition = {};
+                this.target = null;
+
+                var _enter = function (e) {
+                    e = that.fixEvent(e);
+                    that.startPosition = {
+                        x: e.layerX,
+                        y: e.layerY
+                    };
+
+                    that.root.css({
+                        left: that.startPosition.x,
+                        top: that.startPosition.y
+                    });
+
+                    if (!that.root.hasClass("show")) {
+                        that.root.addClass("show");
+                    }
+
+                    doc.on("mousemove", _move);
+                    that.$eggBox.on("mouseleave", _end);
+
+                    //this.setCapture && this.setCapture(false); //ie 鼠标移出浏览器依然可以拖拽
+                    //e.preventDefault(); //阻止默认行为，chrome的拖拽选择文字行为
+                    return false;
+                },
+                _move = function (e) {
+                    e = that.fixEvent(e);
+                    that.movePosition = {
+                        x: e.clientX - 150 ,
+                        y: e.clientY -143
+                    };
+                    that.limit();
+
+                    that.root.css({
+                        left: that.movePosition.x,
+                        top: that.movePosition.y
+                    });
+                },
+                _end = function () {
+                    doc.unbind('mousemove', _move);
+                    return false;
+                };
+
+                this.$eggBox.on("mouseenter", _enter);
+
+                this.root.on("click", function (e) {
+
+                    var dd = "";
+                    if (that.movePosition.x < 380) {
+                        dd = 1;
+                    }
+                    else if (that.movePosition.x > 380 && that.movePosition.x < 760 ) {
+                        dd = 2;
+                    }
+                    else {
+                        dd = 3;
+                    }
+
+                    alert("蛋蛋" + dd);
+
+                });
+            },
+            fixEvent: function (e) {
+                if (!e.pageX) {
+                    e.pageX = e.clientX + win.scrollTop();
+                    e.pageY = e.clientY + win.scrollLeft();
+                }
+                if (!e.layerX) {
+                    e.layerX = e.clientX - parseInt(this.root.css('left'));
+                    e.layerY = e.clientY - parseInt(this.root.css('top'));
+                }
+                return e;
+            },
+            limit: function () {
+                if (this.min !== undefined) {
+                    this.movePosition = {
+                        x: Math.max(this.min.x, this.movePosition.x),
+                        y: Math.max(this.min.y, this.movePosition.y)
+                    };
+                }
+                if (this.max !== undefined) {
+                    this.movePosition = {
+                        x: Math.min(this.max.x, this.movePosition.x),
+                        y: Math.min(this.max.y, this.movePosition.y)
+                    };
+                }
+            }
+        };
+
+        egg.fn.init.prototype = egg.fn;
+        window.egg = $.egg = egg;
+
+    }(jQuery));
+
+
+    $(function () {
+        $.egg();
+
+    });
+</script>

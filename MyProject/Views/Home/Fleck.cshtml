@@ -1,0 +1,90 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Fleck</title>   
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <input id="Text1" type="text" />
+        <input id="Button1" type="button" value="button" />
+
+        <div class="json">
+            
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+<script src="~/assets/js/jquery-1.10.2.min.js"></script>
+<script>
+
+    (function ($) {
+        var wsServer = 'ws://172.16.18.10:8181/';
+        var websocket = new WebSocket(wsServer);
+        websocket.onopen = function (evt) { onOpen(evt) };
+        websocket.onclose = function (evt) { onClose(evt) };
+        websocket.onmessage = function (evt) { onMessage(evt) };
+        websocket.onerror = function (evt) { onError(evt) };
+        function onOpen(evt) {
+            console.log("Connected to WebSocket server.");
+        }
+        function onClose(evt) {
+            console.log("Disconnected");
+        }
+        function onMessage(evt) {
+
+            console.log('Retrieved data from server: ' + evt.data);
+
+            var p = JSON.parse(evt.data);
+
+            var tab = [];
+
+            for (var i in p) {
+                tab.push("<tr>");
+                tab.push("<td>" + p[i].ID + "</td>");
+                tab.push("<td>" + p[i].Name + "</td>");
+                tab.push("<td>" + p[i].Age + "</td>");
+                tab.push("<td>" + p[i].AddTime + "</td>");
+                tab.push("</tr>");
+            }
+
+            $(".table tbody").append(tab.join(""));
+
+        }
+        function onError(evt) {
+            console.log('Error occured: ' + evt.data);
+        }
+
+        function send(msg) {
+            websocket.send(msg);
+        }
+
+        $(function () {
+            $("#Button1").on("click", function () {
+                var val = $("#Text1").val();
+                send(val);
+            });
+        });
+
+    }(jQuery));
+
+</script>

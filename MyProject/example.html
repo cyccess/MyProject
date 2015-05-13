@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script>
+
+        (function () {
+            var A = function () {
+                this.x = 10;
+                var y = 11,
+                    z = {
+                        a: function () {
+                            return "crp";
+                        }
+                    }
+                //return [1, 2, 3];
+            }
+
+            A.prototype.test = function (p) {
+
+                return p + z.a();
+            }
+
+            var a = new A();
+
+            console.log(a.x);
+
+            console.log(a.test('111'));
+        }());
+      
+    </script>
+</head>
+<body>
+   
+</body>
+</html>
