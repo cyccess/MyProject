@@ -111,6 +111,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -121,8 +122,28 @@
     <Content Include="assets\css\bootstrap-theme.css" />
     <Content Include="assets\css\bootstrap-theme.min.css" />
     <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\images\ad_auto.jpg" />
+    <Content Include="assets\images\ad_home.jpg" />
+    <Content Include="assets\images\ad_nba.jpg" />
+    <Content Include="assets\images\ad_stock.jpg" />
+    <Content Include="assets\images\ad_yuetu.jpg" />
     <Content Include="assets\images\egg.jpg" />
     <Content Include="assets\images\hammer.png" />
+    <Content Include="assets\images\win1001.jpg" />
+    <Content Include="assets\images\win1008.jpg" />
+    <Content Include="assets\images\win1021.jpg" />
+    <Content Include="assets\modules\flexslider\css\style.css" />
+    <Content Include="assets\modules\flexslider\images\ad_auto.jpg" />
+    <Content Include="assets\modules\flexslider\images\ad_ctr.png" />
+    <Content Include="assets\modules\flexslider\images\ad_home.jpg" />
+    <Content Include="assets\modules\flexslider\images\ad_nba.jpg" />
+    <Content Include="assets\modules\flexslider\images\ad_stock.jpg" />
+    <Content Include="assets\modules\flexslider\images\ad_yuetu.jpg" />
+    <Content Include="assets\modules\flexslider\images\dot.png" />
+    <Content Include="assets\modules\flexslider\index.htm" />
+    <Content Include="assets\modules\flexslider\js\jquery-1.8.2.min.js" />
+    <Content Include="assets\modules\flexslider\js\slider.js" />
     <Content Include="assets\widgets\dialog.js" />
     <Content Include="assets\flash\ZeroClipboard.swf" />
     <Content Include="assets\js\bootstrap.js" />
@@ -199,12 +220,14 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Fleck.cshtml" />
     <Content Include="Views\Home\Egg.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

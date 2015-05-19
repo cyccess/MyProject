@@ -1,0 +1,339 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Home Page";
+}
+<header class="saved-search-selector">
+    <div id="search-header-view">
+        <div class="header-section-primary">
+            <h1 class="search-title" title="Search">Search</h1>
+        </div>
+    </div>
+</header>
+<form class="navigator-search form-inline">
+    <div class="search-warp">
+        <div class="btn-group">
+            <button class="btn btn-default dropdown-toggle drop-arrow" type="button" data-id="operators">
+                <div class="criteria-wrap">通讯运营商:所有</div>
+            </button>
+            <div class="check-list-select">
+                <ul class="aui-last" id="select-operators-multi-select">
+                    <li class="check-list-item"><label><input type="checkbox" value="1" />中国移动</label></li>
+                    <li class="check-list-item"><label><input type="checkbox" value="2" />中国联通</label></li>
+                    <li class="check-list-item"><label><input type="checkbox" value="4" />中国电信</label></li>
+                    <li class="check-list-item"><label><input type="checkbox" value="8" />未知</label></li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle drop-arrow" data-id="gender">
+                <div class="criteria-wrap">性别:所有</div>
+            </button>
+            <div class="check-list-select">
+                <ul class="aui-last" id="select-gender-multi-select">
+                    <li class="check-list-item"><label><input type="checkbox" value="1" />男</label></li>
+                    <li class="check-list-item"><label><input type="checkbox" value="2" />女</label></li>
+                    <li class="check-list-item"><label><input type="checkbox" value="4" />未知</label></li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle drop-arrow" data-id="invest">
+                <div class="criteria-wrap">投资次数:所有</div>
+            </button>
+            <div class="check-list-select">
+                <ul class="aui-last" id="select-loancount-multi-select">
+                    <li class="check-list-item"><label><input type="checkbox" value="1" />未投资</label></li>
+                    <li class="check-list-item"><label><input type="checkbox" value="2" />1次</label></li>
+                    <li class="check-list-item"><label><input type="checkbox" value="4" />1-5次</label></li>
+                    <li class="check-list-item"><label><input type="checkbox" value="8" />5次以上</label></li>
+                </ul>
+            </div>
+        </div>
+        <label class="control-label">时间范围:</label>
+            <div class="form-group has-feedback time">
+                
+                <input class="form-control" id="startTime" type="text" readonly />
+                <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback time">
+                <span>-</span>
+                <input class="form-control" id="stopTime" type="text" readonly />
+                <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+            </div>
+        <div class="form-group ">
+            <button class="btn btn-default" type="button" id="preview">
+                预览
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+        </div>
+    </div>
+</form>
+
+<div class="table-responsive navigator-results">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Header</th>
+                <th>Header</th>
+                <th>Header</th>
+                <th>Header</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1,001</td>
+                <td>Lorem</td>
+                <td>ipsum</td>
+                <td>dolor</td>
+                <td>sit</td>
+            </tr>
+            <tr>
+                <td>1,002</td>
+                <td>amet</td>
+                <td>consectetur</td>
+                <td>adipiscing</td>
+                <td>elit</td>
+            </tr>
+            <tr>
+                <td>1,003</td>
+                <td>Integer</td>
+                <td>nec</td>
+                <td>odio</td>
+                <td>Praesent</td>
+            </tr>
+            <tr>
+                <td>1,003</td>
+                <td>libero</td>
+                <td>Sed</td>
+                <td>cursus</td>
+                <td>ante</td>
+            </tr>
+            <tr>
+                <td>1,004</td>
+                <td>dapibus</td>
+                <td>diam</td>
+                <td>Sed</td>
+                <td>nisi</td>
+            </tr>
+            <tr>
+                <td>1,005</td>
+                <td>Nulla</td>
+                <td>quis</td>
+                <td>sem</td>
+                <td>at</td>
+            </tr>
+            <tr>
+                <td>1,006</td>
+                <td>nibh</td>
+                <td>elementum</td>
+                <td>imperdiet</td>
+                <td>Duis</td>
+            </tr>
+            <tr>
+                <td>1,007</td>
+                <td>sagittis</td>
+                <td>ipsum</td>
+                <td>Praesent</td>
+                <td>mauris</td>
+            </tr>
+            <tr>
+                <td>1,008</td>
+                <td>Fusce</td>
+                <td>nec</td>
+                <td>tellus</td>
+                <td>sed</td>
+            </tr>
+            <tr>
+                <td>1,009</td>
+                <td>augue</td>
+                <td>semper</td>
+                <td>porta</td>
+                <td>Mauris</td>
+            </tr>
+            <tr>
+                <td>1,010</td>
+                <td>massa</td>
+                <td>Vestibulum</td>
+                <td>lacinia</td>
+                <td>arcu</td>
+            </tr>
+            <tr>
+                <td>1,011</td>
+                <td>eget</td>
+                <td>nulla</td>
+                <td>Class</td>
+                <td>aptent</td>
+            </tr>
+            <tr>
+                <td>1,012</td>
+                <td>taciti</td>
+                <td>sociosqu</td>
+                <td>ad</td>
+                <td>litora</td>
+            </tr>
+            <tr>
+                <td>1,013</td>
+                <td>torquent</td>
+                <td>per</td>
+                <td>conubia</td>
+                <td>nostra</td>
+            </tr>
+            <tr>
+                <td>1,014</td>
+                <td>per</td>
+                <td>inceptos</td>
+                <td>himenaeos</td>
+                <td>Curabitur</td>
+            </tr>
+            <tr>
+                <td>1,015</td>
+                <td>sodales</td>
+                <td>ligula</td>
+                <td>in</td>
+                <td>libero</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+@section scripts
+{
+    <script src="~/assets/modules/My97DatePicker/WdatePicker.js"></script>
+    <script>
+        $(function () {
+
+            var hide_dropdown = function () {
+                $(".check-list-select").parent().removeClass("open");
+            }
+
+            $(".dropdown-toggle").on("click", function (event) {
+
+                hide_dropdown();
+
+                var that = $(this);
+                var _warp = that.parent();
+
+                if (_warp.is(".open")) {
+                    _warp.removeClass("open");
+                }
+                else {
+                    _warp.addClass("open");
+                }
+
+                event.stopPropagation();
+            });
+
+            $(".check-list-select>ul>li input[type='checkbox']").on("click", function () {
+                var that = $(this),
+                    checkListSelect = that.parents(".check-list-select"),
+                    btn = checkListSelect.prev(),
+                    criteriaWrap = btn.find(".criteria-wrap"),
+                    selectArray = [];
+
+                checkListSelect.find("ul>li>label input[type='checkbox']:checked").each(function () {
+                    selectArray.push($(this).parent().text())
+                });
+
+                if (selectArray.length === 0) {
+                    var id = btn.data("id");
+                    switch (id) {
+                        case "operators":
+                            selectArray.push("通讯运营商:所有");
+                            break;
+                        case "gender":
+                            selectArray.push("性别:所有");
+                            break;
+                        case "invest":
+                            selectArray.push("投资次数:所有");
+                            break;
+                    }
+                }
+
+                criteriaWrap.text(selectArray.join(','));
+            });
+
+
+            $(".search-warp .time input[type='text']").on("click", function () {
+                WdatePicker({ dateFmt: 'yyyy-MM-dd', skin: "twoer" });
+            });
+
+            $(document).on("click", function () {
+                hide_dropdown();
+            });
+
+            $(document).on("click", ".check-list-item,check-list-item>label", function (e) {
+                e.stopPropagation();
+            });
+
+            $("#send").on("click", function () {
+                var that = $(this),
+                    $operators = $("#select-operators-multi-select"),
+                    $gender = $("#select-gender-multi-select"),
+                    $loancount = $("#select-loancount-multi-select"),
+                    operatorsVal = [],
+                    genderVal = [],
+                    loancountVal = [],
+                    startTime = "",
+                    stopTime = "",
+                    content = "";
+
+
+                operatorsVal = getSelectMultiVal($operators);
+                genderVal = getSelectMultiVal($gender);
+                loancountVal = getSelectMultiVal($loancount);
+                startTime = $("#startTime").val();
+                stopTime = $("#stopTime").val();
+                content = $("#msgContent").val();
+
+                if ($.trim(content) === "") {
+                    $.dialog.tips("请输入发送的短信内容", 2, "icon_4.gif");
+                    return false;
+                }
+
+
+                function getSelectMultiVal(selectObj) {
+                    var selectMulti = [];
+
+                    selectObj.find("input[type='checkbox']:checked").each(function () {
+                        selectMulti.push($(this).val());
+                    });
+                    return selectMulti;
+                }
+
+                var param = {
+                    operatorsVal: operatorsVal,
+                    genderVal: genderVal,
+                    loancountVal: loancountVal,
+                    startTime: startTime,
+                    stopTime: stopTime,
+                    content: content
+                };
+
+                $.dialog.confirm('你确定要批量发送短信吗？', function () {
+
+                    that.attr("disabled", true).addClass("disabled");
+                    that.find("span").text("短信发送中...");
+                    $.ajax({
+                        type: "post",
+                        traditional: true,
+                        url: "/Admin/SendSMS1",
+                        data: param,
+                        dataType: "json",
+                        success: function (json) {
+                            that.attr("disabled", false).removeClass("disabled");
+                            that.find("span").text("发送");
+                            if (json.result > 0) {
+                                $.dialog.tips(json.message, 2, "icon_1.gif");
+                            }
+                            else {
+                                $.dialog.tips(json.message, 2, "icon_3.gif");
+                            }
+                        }
+                    });
+                }, function () {
+
+                });
+            });
+        });
+    </script>
+}

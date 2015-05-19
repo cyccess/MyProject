@@ -27,7 +27,11 @@ namespace MyProject
 
             bundles.Add(new StyleBundle("~/assets/css").Include(
                       "~/assets/css/bootstrap.css",
-                      "~/assets/css/dashboard.css"));
+                      "~/assets/css/main.css"));
+
+            bundles.Add(new StyleBundle("~/bundles/admin").Include(
+                  "~/assets/css/bootstrap.css",
+                  "~/assets/css/dashboard.css"));
 
             // 将 EnableOptimizations 设为 false 以进行调试。有关详细信息，
             // 请访问 http://go.microsoft.com/fwlink/?LinkId=301862

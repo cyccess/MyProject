@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>jQuery flexslider焦点图 - 站长素材</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+
+</head>
+<body>
+
+
+<div id="demo01" class="flexslider">
+	<ul class="slides">
+		<li><div class="img"><img src="images/ad_home.jpg" height="450" width"960" alt="" /></div></li>
+		<li><div class="img"><img src="images/ad_yuetu.jpg" height="450" width"960" alt="" /></div></li>
+		<li><div class="img"><img src="images/ad_nba.jpg" height="450" width"960" alt="" /></div></li>
+		<li><div class="img"><img src="images/ad_stock.jpg" height="450" width"960" alt="" /></div></li>
+		<li><div class="img"><img src="images/ad_auto.jpg" height="450" width"960" alt="" /></div></li>
+	</ul>
+</div><!--flexslider end-->
+
+<div id="demo02" class="flexslider">
+	<ul class="slides">
+		<li><div class="img"><img src="images/ad_home.jpg" height="450" width"960" alt="" /></div></li>
+		<li><div class="img"><img src="images/ad_yuetu.jpg" height="450" width"960" alt="" /></div></li>
+		<li><div class="img"><img src="images/ad_nba.jpg" height="450" width"960" alt="" /></div></li>
+		<li><div class="img"><img src="images/ad_stock.jpg" height="450" width"960" alt="" /></div></li>
+		<li><div class="img"><img src="images/ad_auto.jpg" height="450" width"960" alt="" /></div></li>
+	</ul>
+</div><!--flexslider end-->
+
+
+<script type="text/javascript" src="js/slider.js"></script> 
+<script type="text/javascript">
+$(function(){
+
+	$('#demo01').flexslider({
+		animation: "slide",
+		direction:"horizontal",
+		easing:"swing"
+	});
+	
+	$('#demo02').flexslider({
+		animation: "slide",
+		direction:"vertical",
+		easing:"swing"
+	});
+	
+});
+</script>
+<div style="text-align:center;clear:both">
+<p>适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。</p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
+</body>
+</html>
